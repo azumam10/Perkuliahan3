@@ -1,0 +1,35 @@
+@startuml
+!define RECTANGLE_ROUNDEDRECT
+skinparam node {
+    RoundCorner 15
+}
+
+node "Process A" as A
+node "Process B" as B
+node "Process C" as C
+node "Process D" as D
+node "Process E" as E
+node "Process F" as F
+node "Process G" as G
+
+rectangle "R" as R
+rectangle "S" as S
+rectangle "T" as T
+rectangle "U" as U
+rectangle "V" as V
+rectangle "W" as W
+
+R -down-> A : hold
+A -right-> S : want
+B -down-> T : want
+C -right-> S : want
+U -down-> D : hold
+D -right-> S : want
+D -right-> T : want
+T -right-> E : hold
+E -down-> V : want
+W -down-> F : hold
+F -right-> S : want
+V -down-> G : hold
+G -right-> U : want
+@enduml
